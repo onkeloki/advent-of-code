@@ -4,9 +4,9 @@ fs.readFile('input.txt', 'utf8', (err, data) => {
     var ribbon = 0;
     data.split("\n").forEach(box => {
         box = box.split("x").sort((a, b) => a - b);
-        // ribbon = box[0]+box[0]+box[1]+box[1]
-        paper += 2 * box[0] * box[1] + 2 * box[1] * box[2] + 2 * box[0] * box[2];
-        paper += box[0] * box[1];
+        ribbon += (+box[0]) + (+box[0]) + (+box[1]) + (+box[1]);
+        ribbon += box[0] * box[1] * box[2];
+
     })
-    console.log(paper);
+    console.log(ribbon);
 });
